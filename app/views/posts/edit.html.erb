@@ -23,6 +23,7 @@
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
        <% else %>
         <li><%= link_to 'User Login',  new_user_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
