@@ -21,14 +21,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-  <div class="col-xs-12 col-md-8"><% @posts.each do |post| %>
     <div style="padding-left:0; padding-right:0; background:#fff" class="container-fluid">
-      <center><h2><%= post.title %></h2>
-        <br><%= image_tag post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
+      <center><h2><%= @post.title %></h2>
+        <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
       </center>
     </div>
-    <p><%= post.content %></p>
-    <% end %>
+    <p><%= @post.content %></p>
   </div>
   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
 </div>
