@@ -25,6 +25,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'ckeditor', '4.1.3'
 
+gem "cancan"
+
 gem 'aws-sdk', '~> 2.3'
 
 gem 'figaro'
