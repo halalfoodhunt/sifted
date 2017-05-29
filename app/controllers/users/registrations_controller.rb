@@ -1,9 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 def sign_up_params
-		params.require(:merchant).permit(:name, :email, :password)
+		params.require(:user).permit(:name, :email, :password)
 	end
 	
 	def account_update_params
-		params.require(:merchant).permit(:name, :email, :password, :author_profile)
+		params.require(:user).permit(:name, :email, :password, :author_profile)
 	end
 end
