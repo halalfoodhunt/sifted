@@ -1,9 +1,7 @@
-<div id="parent">
-  <div id="form_login">
     <div class="col-md-6 col-md-offset-3">
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-      <h4>Login up</h4>
+      <h4>Login</h4>
       <div class="field">
         <%= f.text_field :name, autofocus: true %>
       </div>
@@ -25,5 +23,3 @@
       <% end %>
     </div>
   </div>
-</div>
-</div>
