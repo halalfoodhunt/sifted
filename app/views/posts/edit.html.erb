@@ -20,7 +20,7 @@
         <% if user_signed_in? %>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
-        <h6 class="navbar-text">Logged in as <strong><%= current_user.name %></strong>.</h6>
+        <h5 class="navbar-text">Logged in as <strong><%= current_user.name %></strong>.</h5>
        <% else %>
         <li><%= link_to 'User Login',  new_user_session_path %></li>
         <% end %>
