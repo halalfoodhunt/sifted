@@ -42,7 +42,6 @@
 <div class="container">
     <div style="background:#fff" class="col-xs-12 col-md-9">
       <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
-      <p><%= image_tag avatar_url(user) %></p>
         <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
       </center>
       <p><%= @post.content.html_safe %></p>
