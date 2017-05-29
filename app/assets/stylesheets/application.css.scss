@@ -1,0 +1,62 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900';
+@import "https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+}
+
+h2 {
+    font-size:2.7em;
+}
+
+h3 {
+    font-size:2em;
+}
+
+h4 {
+    font-size:1.5em;
+}
+
+h5 {
+    font-size:1.0em;
+}
+
+h6 {
+    font-size:0.8em;
+}
+
+.italic-font {
+    font-style: italic;
+}
+
+a {
+    color:#cc3333;
+}
+
+a:hover, a:focus {
+    color:#397158;
+    text-decoration: none;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:500;
+}
