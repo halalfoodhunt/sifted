@@ -7,5 +7,6 @@ class Ability
       can :create, Post
       can :update, Post do |post|
     end
+ end
 
 end
