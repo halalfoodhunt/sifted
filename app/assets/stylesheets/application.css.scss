@@ -6,6 +6,12 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900';
 @import "https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900";
 
+body {
+    background:#ececec;
+    font-family: 'Muli', sans-serif;
+    font-weight:400;
+}
+
 h1,
 h2,
 h3,
@@ -75,12 +81,6 @@ label {
     font-size:2em;
 }
 
-body {
-    background:#ececec;
-    font-family: 'Muli', sans-serif;
-    font-weight:400;
-}
-
 .navbar-default.navbar {
     color: rgba(255, 255, 255, 0.84);
     font-family: 'Montserrat', sans-serif;
@@ -90,4 +90,14 @@ body {
     font-size: 11px;
     margin-bottom: 0px;
     border-radius: 0;
+}
+
+#parent {
+   display: table;
+   width: 100%;
+}
+#form_login {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
 }
