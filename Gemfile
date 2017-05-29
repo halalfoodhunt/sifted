@@ -25,6 +25,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'ckeditor', '4.1.3'
 
+gem 'social-share-button', '~> 0.1.6'
+
 gem "cancan"
 
 gem 'aws-sdk', '~> 2.3'
