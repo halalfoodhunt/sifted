@@ -21,11 +21,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    unauthorized! if cannot? :edit, @post
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    unauthorized! if cannot? :create, @post
     @post = current_user.posts.new(post_params)
 
     respond_to do |format|
