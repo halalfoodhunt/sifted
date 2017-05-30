@@ -23,6 +23,8 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'meta-tags'
+
 gem 'ckeditor', '4.1.3'
 
 gem 'social-share-button', '~> 0.1.6'

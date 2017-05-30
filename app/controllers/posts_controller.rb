@@ -11,6 +11,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    prepare_meta_tags(title: @post.title,
+                      description: @post.content,
+                      image: @post.feature_image.url(:large))
   end
 
   # GET /posts/new
