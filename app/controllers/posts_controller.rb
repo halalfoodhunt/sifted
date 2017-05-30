@@ -15,7 +15,6 @@ class PostsController < ApplicationController
             site: 'Sifted by Halalfoodhunt.com',
             reverse: true,
             description: @post.content, 
-            keywords: Faker::Lorem.words(4),
             twitter: {
               card: "summary",
               site: "@halalfoodhunt",
