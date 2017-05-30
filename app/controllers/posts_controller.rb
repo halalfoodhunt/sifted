@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def show
     prepare_meta_tags(title: @post.title,
                       description: @post.content,
-                      image: @post.feature_image.url(:large))
+                      image: @post.featured_image.url(:large))
   end
 
   # GET /posts/new
