@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.friendly.find(params[:id])
-    @user = User.find(params[:id])
   end
 
   # GET /posts/new
