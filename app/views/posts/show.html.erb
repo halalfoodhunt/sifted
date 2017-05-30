@@ -44,7 +44,7 @@
       <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
         <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
       </center>
-      <%= social_share_button_tag("My Site") %>
+      <%= @user.name %>
       <p><%= @post.content.html_safe %></p>
       <%= social_share_button_tag("My Site") %>
     </div>
