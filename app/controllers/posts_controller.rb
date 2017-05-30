@@ -20,14 +20,14 @@ class PostsController < ApplicationController
               site: "@halalfoodhunt",
               title: @post.title,
               description:  @post.content,
-              image: @post.featured_image.url(:thumb)
+              image: @post.featured_image.url(:square)
             },
             og: {
               title:    @post.title,
               description: @post.content,
               type:     'website',
-              url:      post_url(@post),
-              image:    @post.featured_image.url(:thumb)
+              url:      'sifted.halalfoodhunt.com',
+              image:    @post.featured_image.url(:square)
             }
   end
 
