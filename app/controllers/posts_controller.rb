@@ -11,9 +11,25 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    prepare_meta_tags(title: @post.title,
-                      description: @post.content,
-                      image: @post.featured_image.url(:large))
+    set_meta_tags title: @post.title,
+            site: 'Sifted by Halalfoodhunt.com',
+            reverse: true,
+            description: @post.content, 
+            keywords: Faker::Lorem.words(4),
+            twitter: {
+              card: "summary",
+              site: "@halalfoodhunt",
+              title: @post.title,
+              description:  @post.content,
+              image: @post.featured_image.url(:thumb)
+            },
+            og: {
+              title:    @post.title,
+              description: @post.content,
+              type:     'website',
+              url:      post_url(@post),
+              image:    @post.featured_image.url(:thumb)
+            }
   end
 
   # GET /posts/new
