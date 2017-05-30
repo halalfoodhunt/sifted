@@ -44,7 +44,6 @@
       <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
         <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
       </center>
-      <p><%= user.name %></p>
       <p><%= @post.content.html_safe %></p>
       <%= social_share_button_tag("My Home Page", :url => "https://sifted-by-halalfoodhunt.herokuapp.com/posts/the-ultimate-list-of-what-s-halal-at-geylang-serai-ramadan-bazaar-and-why-you-should-even-care") %>
     </div>
