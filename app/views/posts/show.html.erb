@@ -62,44 +62,44 @@
       </div>
     </div>
     <% end %>
-  <div class="col-xs-12 col-md-3"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/GreatThai-Sq-Ad.jpg" class="img-responsive" alt="Responsive image">
-    <br><a href="http://www.hydeandco.com.sg"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/hydeCo-e1496208007605.jpg" class="img-responsive" alt="Responsive image"></a>
-    <br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-2.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-1.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/09/FOODSTER-1.jpg" class="img-responsive" alt="Responsive image">
-  </div>
-</div>
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="http://sifted.halalfoodhunt.com">
-        <img alt="Brand" src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/08/FINALLLL.png" style="width:140px; height:90px;">
-      </a>
+    <div class="col-xs-12 col-md-3"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/GreatThai-Sq-Ad.jpg" class="img-responsive" alt="Responsive image">
+      <br><a href="http://www.hydeandco.com.sg"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/hydeCo-e1496208007605.jpg" class="img-responsive" alt="Responsive image"></a>
+      <br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-2.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-1.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/09/FOODSTER-1.jpg" class="img-responsive" alt="Responsive image">
     </div>
+  </div>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://sifted.halalfoodhunt.com">
+          <img alt="Brand" src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/08/FINALLLL.png" style="width:140px; height:90px;">
+        </a>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-       <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
-       <% if user_signed_in? %>
-       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_user.name %></strong>!<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><h6><center><%= link_to 'Edit profile', edit_user_registration_path %></center></h6></li>
-          <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
-        </ul>
-      </li>
-      <% else %>
-      <li><%= link_to 'User Login',  new_user_session_path %></li>
-      <% end %>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+         <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
+         <% if user_signed_in? %>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_user.name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><h6><center><%= link_to 'Edit profile', edit_user_registration_path %></center></h6></li>
+            <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
+          </ul>
+        </li>
+        <% else %>
+        <li><%= link_to 'User Login',  new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 <br>
 <div class="container">
@@ -116,21 +116,21 @@
     <h4>Share</h4>
     <%= social_share_button_tag("My Home Page")%>
     <br>
-    <h4>More Articles</h4>
-    <% @posts.each do |post| %>
-    <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
-        <div class="caption">
-          <h5><%= link_to post.title, post_path(post) %></h5>
-          <p><%= raw(post.content.truncate_words(10)) %></p>
-          <p><a href="#" class="btn btn-default" role="button">Read More</a></p>
+    <div class="col-sm-12 col-md-12">
+      <h4>More Articles</h4>
+      <% @posts.each do |post| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
+          <div class="caption">
+            <h5><%= link_to post.title, post_path(post) %></h5>
+            <p><%= raw(post.content.truncate_words(10)) %></p>
+            <p><a href="#" class="btn btn-default" role="button">Read More</a></p>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    </div>
-    <% end %>
   </div>
   <div class="col-xs-12 col-md-3"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/GreatThai-Sq-Ad.jpg" class="img-responsive" alt="Responsive image">
     <br><a href="http://www.hydeandco.com.sg"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/hydeCo-e1496208007605.jpg" class="img-responsive" alt="Responsive image"></a>
