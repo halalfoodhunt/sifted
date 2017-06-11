@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @posts = Post.all.limit(4)
+    @posts = Post.all.limit(3)
     set_meta_tags title: @post.title,
             site: 'Sifted by Halalfoodhunt.com',
             reverse: true,
