@@ -34,11 +34,11 @@
 </nav>
 <br>
 <div class="container">
-  <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li class="active"><a href="#"><%= @post.title %></a></li>
-  </ol>
-  <div style="background:#fff" class="col-xs-12 col-md-12">
+  <div class="col-xs-12 col-md-12">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li class="active"><a href="#"><%= @post.title %></a></li>
+    </ol>
     <div style="background:#fff" class="col-xs-12 col-md-9">
       <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
         <p><i>by</i> <%= @post.user.name %></p>
