@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="navbar-brand" href="http://sifted.halalfoodhunt.com">
+      <a class="navbar-brand" href="http://sifted.halalfoodhunt.com">
         <img alt="Brand" src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/08/FINALLLL.png" style="width:140px; height:90px;">
       </a>
     </div>
@@ -18,38 +18,50 @@
       <ul class="nav navbar-nav navbar-right">
        <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
        <% if user_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_user.name %></strong>!<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-        <li><h6><center><%= link_to 'Edit profile', edit_user_registration_path %></center></h6></li>
-        <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
-          </ul>
-        </li>
-       <% else %>
-        <li><%= link_to 'User Login',  new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+       <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_user.name %></strong>!<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><h6><center><%= link_to 'Edit profile', edit_user_registration_path %></center></h6></li>
+          <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
+        </ul>
+      </li>
+      <% else %>
+      <li><%= link_to 'User Login',  new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>
 <br>
 <div class="container">
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li class="active"><a href="#"><%= @post.title %></a></li>
-</ol>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active"><a href="#"><%= @post.title %></a></li>
+  </ol>
 </div>
 <div class="container">
-    <div style="background:#fff" class="col-xs-12 col-md-9">
-      <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
+  <div style="background:#fff" class="col-xs-12 col-md-9">
+    <center><h2 style="color:#555;"><strong><%= @post.title %></strong></h2>
       <p><i>by</i> <%= @post.user.name %></p>
-        <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
-      </center>
-      <p><%= @post.content.html_safe %></p>
-      <%= social_share_button_tag("My Home Page")%>
+      <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
+    </center>
+    <p><%= @post.content.html_safe %></p>
+    <%= social_share_button_tag("My Home Page")%>
+    <% @posts.each do |post| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag @post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="caption">
+          <h3><%= @post.title %></h3>
+          <p><%= raw truncate_html(post.content, length: 190) %></p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
     </div>
+    <% end %>
+  </div>
   <div class="col-xs-12 col-md-3"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/GreatThai-Sq-Ad.jpg" class="img-responsive" alt="Responsive image">
-  <br><a href="http://www.hydeandco.com.sg"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/hydeCo-e1496208007605.jpg" class="img-responsive" alt="Responsive image"></a>
-  <br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-2.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-1.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/09/FOODSTER-1.jpg" class="img-responsive" alt="Responsive image"></div>
+    <br><a href="http://www.hydeandco.com.sg"><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/05/hydeCo-e1496208007605.jpg" class="img-responsive" alt="Responsive image"></a>
+    <br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-2.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2017/04/Side-Bar-1.jpg" class="img-responsive" alt="Responsive image"><br><img src="http://sifted.halalfoodhunt.com/wp-content/uploads/2016/09/FOODSTER-1.jpg" class="img-responsive" alt="Responsive image"></div>
+  </div>
 </div>
-
