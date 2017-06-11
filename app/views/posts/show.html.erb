@@ -46,6 +46,7 @@
       <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
     </center>
     <p><%= @post.content.html_safe %></p>
+    <h4>Share</h4>
     <%= social_share_button_tag("My Home Page")%>
     <br>
     <h4>More Articles</h4>
