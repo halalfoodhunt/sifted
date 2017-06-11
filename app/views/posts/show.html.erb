@@ -47,6 +47,8 @@
     </center>
     <p><%= @post.content.html_safe %></p>
     <%= social_share_button_tag("My Home Page")%>
+    <br>
+    <h4>More Articles</h4>
     <% @posts.each do |post| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
