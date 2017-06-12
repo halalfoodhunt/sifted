@@ -29,7 +29,7 @@ class PostsController < ApplicationController
               url:      'sifted.halalfoodhunt.com',
               image:    @post.featured_image.url(:square)
             }
-    @posts = Post.all.limit(4)
+    @posts = Post.all.limit(3)
   end
 
   # GET /posts/new
