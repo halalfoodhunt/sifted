@@ -59,7 +59,7 @@
           <div class="thumbnail">
             <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
             <div class="caption">
-              <h5><%= link_to post.title, post_path(post) %></h5>
+              <h5><%= post.title %></h5>
               <p><%= raw(post.content.truncate_words(10)) %></p>
               <p><a href="#" class="btn btn-default" role="button">Read More</a></p>
             </div>
