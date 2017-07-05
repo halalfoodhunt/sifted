@@ -41,9 +41,9 @@
   <div class="col-sm-12 col-md-12">
     <div style="background:#fff" class="col-xs-12 col-md-9">
       <div class="col-sm-12 col-md-12">
-        <center><h2><strong><%= @post.title %></strong></h2>
+        <h2><strong><%= @post.title %></strong></h2>
           <p><i>by</i> <%= @post.user.name %></p>
-          <br><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
+          <br><center><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
         </center>
         <p><%= @post.content.html_safe %></p>
       </div>
