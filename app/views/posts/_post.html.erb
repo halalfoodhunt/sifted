@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
         <div class="col-sm-6 col-md-3">
-          <div class="thumbnail" style="height:400px;">
+          <div class="thumbnail" style="height:420px;">
             <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
             <div class="caption">
               <h5><%= post.title %></h5>
