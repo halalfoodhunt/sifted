@@ -46,7 +46,7 @@
         </div><!-- End Item -->
         <% end %>
         
-        <% @posts.recent(3).each do |post| %>
+        <% @posts.limit(3).each do |post| %>
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
