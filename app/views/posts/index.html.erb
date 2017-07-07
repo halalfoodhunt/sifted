@@ -37,7 +37,7 @@
       <div class="carousel-inner">
         
         <% @posts.each do |post| %>
-        <div class="item active">
+        <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
             <h5><%= link_to post.title, post_path(post) %></h5>
