@@ -46,7 +46,7 @@
         </div><!-- End Item -->
         <% end %>
         
-        <% @posts.sort_by{|t| - t.created_at.to_i}[3..4].each do |post| %> 
+        <% @posts.sort_by{|t| - t.created_at.to_i}[2..4].each do |post| %> 
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
