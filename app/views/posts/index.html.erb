@@ -51,7 +51,7 @@
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
             <h3><%= link_to post.title, post_path(post) %></h3>
-            <p><%=h truncate(post.content.html_safe, :length => 80) %></p>
+            <p><%=h truncate(post.content, :length => 80) %></p>
           </div>
         </div><!-- End Item -->
         <% end %>
