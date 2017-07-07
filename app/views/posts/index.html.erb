@@ -50,7 +50,7 @@
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
-            <h3><%= link_to post.title, post_path(post) %></h3>
+            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post) %></div>
             <p><%= raw post.content.truncate(200) %></p>
           </div>
         </div><!-- End Item -->
