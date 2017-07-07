@@ -36,7 +36,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         
-        <% @posts.each.limit(1) do |post| %>
+        <% @posts.limit(1).each do |post| %>
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
