@@ -60,27 +60,27 @@
     	<ul class="nav nav-pills nav-justified">
           <% @posts.sort_by{|t| - t.created_at.to_i}[1..1].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0" class="active">
-            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50) %></small>
+            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50), :style => 'line-height:18px;' %></small>
             </li>
           <% end %>
           <li data-target="#myCarousel" data-slide-to="1">
             <% @posts.sort_by{|t| - t.created_at.to_i}[2..2].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
-            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50) %></small>
+            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50), :style => 'line-height:18px;' %></small>
             </li>
           <% end %>
             </li>
           <li data-target="#myCarousel" data-slide-to="2">
             <% @posts.sort_by{|t| - t.created_at.to_i}[3..3].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
-            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50) %></small>
+            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50), :style => 'line-height:18px;' %></small>
             </li>
           <% end %>
             </li>
           <li data-target="#myCarousel" data-slide-to="3">
             <% @posts.sort_by{|t| - t.created_at.to_i}[4..4].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
-            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50) %></small>
+            <h6><%= link_to post.title, post_path(post) %></h6><small><%= raw post.content.truncate(50), :style => 'line-height:18px;' %></small>
             </li>
           <% end %>
             </li>
