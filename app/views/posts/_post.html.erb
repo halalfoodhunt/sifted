@@ -3,7 +3,7 @@
           <div class="thumbnail padding-0 border-radius-0" style="height:420px;">
             <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
             <div class="caption">
-              <h5><%= link_to post.title, post_path(post) %></h5>
+              <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
               <p>by <i><%= post.user.name %></i></p>
               <p><%= link_to 'Read More', post_path(post), :class => "btn btn-default" %></p>
             </div>
