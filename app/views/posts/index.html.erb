@@ -36,7 +36,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         
-        <% @posts.sort_by{|t| - t.created_at.to_i}[1..1].each do |post| %> 
+        <% @posts.sort_by{|t| - t.created_at.to_i}[34..34].each do |post| %> 
         <div class="item active">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
@@ -46,7 +46,7 @@
         </div><!-- End Item -->
         <% end %>
         
-        <% @posts.sort_by{|t| - t.created_at.to_i}[2..4].each do |post| %> 
+        <% @posts.sort_by{|t| - t.created_at.to_i}[35..36].each do |post| %> 
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
@@ -58,27 +58,27 @@
       </div><!-- End Carousel Inner -->
 
     	<ul class="nav nav-pills nav-justified">
-          <% @posts.sort_by{|t| - t.created_at.to_i}[1..1].each do |post| %> 
+          <% @posts.sort_by{|t| - t.created_at.to_i}[34..34].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0" class="active">
             <h6><%= link_to post.title, post_path(post) %></h6><small style="line-height:18px;"><%= raw post.content.truncate(50) %></small>
             </li>
           <% end %>
           <li data-target="#myCarousel" data-slide-to="1">
-            <% @posts.sort_by{|t| - t.created_at.to_i}[2..2].each do |post| %> 
+            <% @posts.sort_by{|t| - t.created_at.to_i}[35..35].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
             <h6><%= link_to post.title, post_path(post) %></h6><small style="line-height:18px;"><%= raw post.content.truncate(50) %></small>
             </li>
           <% end %>
             </li>
           <li data-target="#myCarousel" data-slide-to="2">
-            <% @posts.sort_by{|t| - t.created_at.to_i}[3..3].each do |post| %> 
+            <% @posts.sort_by{|t| - t.created_at.to_i}[36..36].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
             <h6><%= link_to post.title, post_path(post) %></h6><small style="line-height:18px;"><%= raw post.content.truncate(50) %></small>
             </li>
           <% end %>
             </li>
           <li data-target="#myCarousel" data-slide-to="3">
-            <% @posts.sort_by{|t| - t.created_at.to_i}[4..4].each do |post| %> 
+            <% @posts.sort_by{|t| - t.created_at.to_i}[37..37].each do |post| %> 
           <li data-target="#myCarousel" data-slide-to="0">
             <h6><%= link_to post.title, post_path(post) %></h6><small style="line-height:18px;"><%= raw post.content.truncate(50) %></small>
             </li>
