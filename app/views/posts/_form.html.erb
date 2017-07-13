@@ -36,7 +36,7 @@
     <%= f.check_box :draft %>
     </div>
     <div class="actions">
-    <%= f.submit 'Publish' %>
+    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-raised btn-primary" %>
   </div>
   </div>
 <% end %>
