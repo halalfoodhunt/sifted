@@ -17,8 +17,8 @@
   <div class="form-group">
     <%= f.cktext_area :content, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
   </div>
-     <div class="actions">
-    <%= f.submit 'Publish' %>
+  <div class="actions">
+    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-raised btn-primary" %>
   </div>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -35,8 +35,8 @@
     <div class="field">
     <%= f.check_box :draft %>
     </div>
-     <div class="actions">
-    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-raised btn-primary" %>
+      <div class="actions">
+    <%= f.submit 'Publish' %>
   </div>
   </div>
 <% end %>
