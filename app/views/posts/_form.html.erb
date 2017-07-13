@@ -30,6 +30,9 @@
       <%= f.file_field :featured_image, hide_label: true %>
     </div>
     <div class="field">
+    <%= f.collection_select :category_id, Category.all, :id, :name, autofocus: true, layout: :inline %>
+    </div>
+    <div class="field">
     <%= f.check_box :draft %>
     </div>
     <div class="actions">
