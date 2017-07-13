@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sub_categories
   mount Ckeditor::Engine => '/ckeditor'
   
   root to: "posts#index"
