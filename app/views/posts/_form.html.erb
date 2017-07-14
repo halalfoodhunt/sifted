@@ -33,6 +33,9 @@
     <%= f.collection_select :category_id, Category.all, :id, :name, autofocus: true, layout: :inline %>
     </div>
     <div class="field">
+    <%= f.collection_select :sub_category_id, SubCategory.all, :id, :name, autofocus: true, layout: :inline %>
+    </div>
+    <div class="field">
     <%= f.check_box :draft %>
     </div>
       <div class="actions">
