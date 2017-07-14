@@ -14,7 +14,6 @@
   <div class="field">
     <%= f.text_field :name %>
   </div>
-  <%= f.collection_select :sub_category_id, SubCategory.all, :id, :name, autofocus: true, layout: :inline %>
   <div class="actions">
     <%= f.submit %>
   </div>
