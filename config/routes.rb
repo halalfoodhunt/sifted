@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :sub_categories
   mount Ckeditor::Engine => '/ckeditor'
   
+  
+  get ':post', to: redirect('posts#show')
   root to: "posts#index"
   resources :posts
   resources :categories
