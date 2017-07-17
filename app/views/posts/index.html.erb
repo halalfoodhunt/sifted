@@ -36,7 +36,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         
-        <% @posts.sort_by{|t| - t.created_at.to_i}[34..34].each do |post| %> 
+        <% @posts.sort_by{|t| - t.created_at.to_i}[1..1].each do |post| %> 
         <div class="item active">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
@@ -46,7 +46,7 @@
         </div><!-- End Item -->
         <% end %>
         
-        <% @posts.sort_by{|t| - t.created_at.to_i}[35..36].each do |post| %> 
+        <% @posts.sort_by{|t| - t.created_at.to_i}[2..4].each do |post| %> 
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
