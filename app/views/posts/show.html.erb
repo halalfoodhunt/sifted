@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
        <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
        <% @sub_categories.each do |sub_category| %>
-          <li class="hidden-md hidden-lg"><%= sub_category.name %></center></li>
+          <li class="hidden-md hidden-lg"><%= sub_category.name %></li>
           <% end %>
        <% if user_signed_in? %>
        <li class="dropdown">
