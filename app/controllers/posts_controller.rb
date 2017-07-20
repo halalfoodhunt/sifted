@@ -11,7 +11,24 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    
+    set_meta_tags title: @post.title,
+            site: 'Sifted by Halalfoodhunt.com',
+            reverse: true,
+            description: @post.content, 
+            twitter: {
+              card: "summary",
+              site: "@halalfoodhunt",
+              title: @post.title,
+              description:  @post.content,
+              image: @post.featured_image.url(:square)
+            },
+            og: {
+              title:    @post.title,
+              description: @post.content,
+              type:     'website',
+              url:      'sifted.halalfoodhunt.com',
+              image:    @post.featured_image.url(:square)
+            }
     @posts = Post.all.limit(3)
   end
 
