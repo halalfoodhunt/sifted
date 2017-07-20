@@ -1,2 +1,107 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Sifted", root_path, class: 'navbar-brand' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
+       <% SubCategory.all.each do |sub_category| %>
+          <li class="hidden-md hidden-lg"><%= ink_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
+       <% end %>
+       <% if user_signed_in? %>
+       <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_user.name %></strong>!<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><h6><center><%= link_to 'Edit profile', edit_user_registration_path %></center></h6></li>
+          <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
+        </ul>
+      </li>
+      <% else %>
+      <li><%= link_to 'User Login',  new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<nav class="navbar navbar-default hidden-xs hidden-sm">
+  <div class="container">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       <% SubCategory.all.each do |sub_category| %>
+          <li class=""><%= ink_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
+       <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid padding-0">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        
+        <% @posts.sort_by{|t| - t.date_published.to_i}[0..0].each do |post| %> 
+        <div class="item active">
+          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+           <div class="carousel-caption">
+            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <p><%= raw post.content.truncate(200) %></p>
+          </div>
+        </div><!-- End Item -->
+        <% end %>
+        
+        <% @posts.sort_by{|t| - t.date_published.to_i}[1..3].each do |post| %> 
+        <div class="item">
+          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+           <div class="carousel-caption">
+            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <p><%= raw post.content.truncate(200) %></p>
+          </div>
+        </div><!-- End Item -->
+        <% end %>
+      </div><!-- End Carousel Inner -->
+    </div><!-- End Carousel -->
+</div>
+<div class="container">
+  <br>
+<%= render 'posts/post' %>
+</div>
+</div>
+<script>
+  $(document).ready( function() {
+    $('#myCarousel').carousel({
+		interval:   4000
+	});
+	
+	var clickEvent = false;
+	$('#myCarousel').on('click', '.nav a', function() {
+			clickEvent = true;
+			$('.nav li').removeClass('active');
+			$(this).parent().addClass('active');		
+	}).on('slid.bs.carousel', function(e) {
+		if(!clickEvent) {
+			var count = $('.nav').children().length -1;
+			var current = $('.nav li.active');
+			current.removeClass('active').next().addClass('active');
+			var id = parseInt(current.data('slide-to'));
+			if(count == id) {
+				$('.nav li').first().addClass('active');	
+			}
+		}
+		clickEvent = false;
+	});
+});
+</script>
+
+
