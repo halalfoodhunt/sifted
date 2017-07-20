@@ -33,12 +33,12 @@
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default hidden-xs hidden-sm">
   <div class="container">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% @sub_categories.each do |sub_category| %>
-          <li class="hidden-xs hidden-sm"><%= link_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
+          <li><%= link_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
           <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
