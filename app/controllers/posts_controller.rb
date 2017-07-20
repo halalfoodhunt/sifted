@@ -16,7 +16,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @sub_categories = SubCategory.all
+    if params[:sub_category].present? 
+    @sub_category_id = SubCategory.find_by(name: params[:sub_category]).id
+    @sub_categories = SubCategory.where(highlight_id: @highlight_id)
     @meta_title = meta_title @post.title
     @canonical_url = posts_path(@post)
     @og_properties = {
