@@ -39,7 +39,7 @@
   <div class="col-sm-12 col-md-12 padding-0">
     <div class="col-xs-12 col-md-9 padding-0" style="border-right: 1px solid #ccc;">
       <div class="col-sm-12 col-md-12">
-        <h2><%= @post.title %></h2>
+        <h1><%= @post.title %></h1>
           <div class="byline"><i>by</i> <%= @post.user.name %> <%= @post.date_published.strftime("%b %d, %Y") %></div>
           <br><center><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
         </center>

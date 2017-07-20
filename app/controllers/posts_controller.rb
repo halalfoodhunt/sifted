@@ -7,29 +7,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order("date_published DESC")
     @meta_title = meta_title 'SIFTED - Behind the Halal Food Scene'
+    @meta_description = 'Sifted is an online magazine to help halal foodies sift through the multiple food choice available out there, and to bring them more information behind the scenes of the halal food scene.'
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    set_meta_tags title: @post.title,
-            site: 'Sifted by Halalfoodhunt.com',
-            reverse: true,
-            description: @post.content, 
-            twitter: {
-              card: "summary",
-              site: "@halalfoodhunt",
-              title: @post.title,
-              description:  @post.content,
-              image: @post.featured_image.url(:square)
-            },
-            og: {
-              title:    @post.title,
-              description: @post.content,
-              type:     'website',
-              url:      'sifted.halalfoodhunt.com',
-              image:    @post.featured_image.url(:square)
-            }
+    @meta_title = meta_title @post.title
     @posts = Post.all.limit(3)
   end
 

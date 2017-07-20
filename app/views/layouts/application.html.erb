@@ -3,6 +3,9 @@
 <head>
   <title>SIFTED - Behind the Halal Food Scene</title>
   <title><%= @meta_title ? @meta_title : ApplicationController::BRAND_NAME %></title>
+  <% if @meta_description.present? %>
+  <meta name=”description” content=”<%= @meta_description %>”>
+  <% end %>
   <!-- Required meta tags always come first -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,25 +29,19 @@
   ga('send', 'pageview');
 
 </script>
-  <!-- Facebook Pixel Code -->
+<!-- Facebook Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '716068715135518'); 
-fbq('track', 'PageView');
-fbq('track', 'Search');
-</script>
-<noscript>
- <img height="1" width="1" 
-src="https://www.facebook.com/tr?id=716068715135518&ev=PageView
-&noscript=1"/>
-</noscript>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '586651638196392');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=586651638196392&ev=PageView&noscript=1"
+/></noscript>
 <!-- End Facebook Pixel Code -->
 </head>
 <body>
