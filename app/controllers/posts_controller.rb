@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @sub_categories = SubCategory.all
     @meta_title = meta_title @post.title
     @canonical_url = posts_path(@post)
     @og_properties = {
