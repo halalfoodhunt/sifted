@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     if params[:sub_category.present? 
     @sub_categoryid = SubCategory.find_by(name: params[:sub_category]).id
-    @posts = Post.includes(:sub_categories).where(sub_category_tag_id: @sub_category_id)
+    @posts = Post.includes(:sub_categories)
     else
     @posts = Post.all.order("date_published DESC")
     end
