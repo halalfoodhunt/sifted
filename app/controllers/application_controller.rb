@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   flash[:error] = "Access denied."
   redirect_to root_url
   end
+  BRAND_NAME = 'Sifted by Halalfoodhunt.com'.freeze
+
+  def meta_title(title)
+    [title, BRAND_NAME].reject(&:empty?).join(' | ')
+  end
+
 end
