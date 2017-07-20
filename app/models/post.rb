@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :url_slug, use: :slugged
+  friendly_id :title, use: :slugged
   
   belongs_to :user
   has_many :categories
