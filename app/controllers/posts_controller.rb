@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:sub_category.present? 
-    @sub_categoryid = SubCategory.find_by(name: params[:sub_category]).id
+    @sub_category_id = SubCategory.find_by(name: params[:sub_category]).id
     @posts = Post.joins(:sub_categories).where(sub_categories: { post: post })
     else
     @posts = Post.all.order("date_published DESC")
