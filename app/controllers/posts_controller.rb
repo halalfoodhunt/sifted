@@ -5,8 +5,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @sub_categories = SubCategory.all
+    if params[:sub_category.present? 
+    @sub_categoryid = SubCategory.find_by(name: params[:sub_category]).id
+    @posts = Post.includes(:sub_categories).where(sub_category_tag_id: @sub_category_id)
+    else
     @posts = Post.all.order("date_published DESC")
+    end
     @meta_title = meta_title 'SIFTED - Behind the Halal Food Scene'
     @meta_description = 'Sifted is an online magazine to help halal foodies sift through the multiple food choice available out there, and to bring them more information behind the scenes of the halal food scene.'
   end

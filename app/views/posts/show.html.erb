@@ -38,7 +38,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% @sub_categories.each do |sub_category| %>
-          <li class="hidden-xs hidden-sm"><%= link_to sub_category.name, sub_category_posts_path %> %></li>
+          <li class="hidden-xs hidden-sm"><%= link_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
           <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
