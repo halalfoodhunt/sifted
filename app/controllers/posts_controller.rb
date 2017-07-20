@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order("date_published DESC")
+    @meta_title = meta_title 'SIFTED - Behind the Halal Food Scene'
   end
 
   # GET /posts/1

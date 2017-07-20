@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
   get '/:id', to: 'posts#show'
+  get 'http://sifted.halalfoodhunt.com/5-dishes-try-garden-table-indonesian-restaurant-near-harbourfront/', to: 'http://sifted.halalfoodhunt.com/5-dishes-try-garden-table-indonesian-restaurant-near-harbourfront/'
   resources :posts
   resources :categories
   resources :media
