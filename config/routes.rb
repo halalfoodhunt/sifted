@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
-  get ':/id', to: 'posts#show'
+  get ':/:id', to: 'posts#show'
   resources :posts
   resources :categories
   resources :media
