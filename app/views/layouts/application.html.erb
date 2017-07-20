@@ -12,6 +12,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <%= display_meta_tags %>
   <%= csrf_meta_tags %>
+  <% if @og_properties.present? %>
+  <%= meta_og_tags @og_properties %>
+  <% end %>
   <meta property="og:url"           content="http://sifted.halalfoodhunt.com" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Sifted" />

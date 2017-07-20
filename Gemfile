@@ -34,6 +34,9 @@ gem "cancan"
 gem 'aws-sdk', '~> 2.3'
 
 gem 'figaro'
+
+gem 'sitemap_generator'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
