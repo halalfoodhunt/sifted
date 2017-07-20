@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:sub_category].present?
+    if params[:sub_categories].present?
     @sub_category_id = SubCategory.find_by(name: params[:sub_category]).id
     @posts = Post.filter_by_params(params)
     else
