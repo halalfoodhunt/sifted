@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       type:  'website',
       image: @post.featured_image.url(:medium),  # this file should exist in /app/assets/images/logo.png
       url: @canonical_url,
-      description: @post.content.truncate(200)
+      description: @post.post_snippet
     }
     @posts = Post.all.limit(3)
   end
