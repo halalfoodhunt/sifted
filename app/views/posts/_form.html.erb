@@ -14,8 +14,15 @@
   <div class="field">
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.text_field :url_slug %>
+  </div>
   <div class="form-group">
     <%= f.cktext_area :content, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
+  </div>
+  <label>YOAST SEO</label>
+  <div class="form-group">
+    <%= f.text_area :post_snippet %>
   </div>
   <div class="actions">
     <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-raised btn-primary" %>
@@ -39,7 +46,7 @@
     <%= f.check_box :draft %>
     </div>
       <div class="actions">
-    <%= f.submit 'Publish' %>
+    <%= f.submit %>
   </div>
   </div>
 <% end %>
