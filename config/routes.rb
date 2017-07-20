@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :media
   resources :sub_categories
+  resources :posts
   mount Ckeditor::Engine => '/ckeditor'
 
   root to: "posts#index"
-  get ':title', to: 'posts#show', as: 'posts/:id'
-  resources :posts
+  get ':title', to: 'posts#show', as: :post
+  
   resources :categories
   devise_for :users, controllers: { registrations: "users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
