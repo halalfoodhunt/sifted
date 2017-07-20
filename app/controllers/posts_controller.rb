@@ -5,10 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:sub_category_id]
-    @sub_category = SubCategory.find params[:sub_category_id]
-    @posts = @sub_category.posts
-    else
+    @sub_categories = SubCategory.all
     @posts = Post.all.order("date_published DESC")
     end 
     @meta_title = meta_title 'SIFTED - Behind the Halal Food Scene'
