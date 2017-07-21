@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: "pages#index"
   get 'pages/feedback_form'
-  get '/:post_id' => 'posts#show'
+  get '/:id' => 'posts#show'
   resources :posts, except: [:show]
   resources :categories
   resources :media
