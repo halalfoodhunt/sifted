@@ -21,9 +21,9 @@ class PostsController < ApplicationController
     @meta_title = meta_title @post.title
     @canonical_url = posts_path(@post)
     @og_properties = {
-      title: @post.title,
+      title: @meta_title,
       type:  'website',
-      image: @post.featured_image.url(:square),  # this file should exist in /app/assets/images/logo.png
+      image: @post.featured_image.url(:medium),  # this file should exist in /app/assets/images/logo.png
       url: @canonical_url,
       description: @post.post_snippet
     }
