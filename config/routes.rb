@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/feedback_form'
   get '/:id', to: 'posts#show'
+  get 'posts', to: 'posts#index'
   resources :categories
   resources :media
   resources :posts
