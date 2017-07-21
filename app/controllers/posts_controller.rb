@@ -19,13 +19,14 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @meta_title = meta_title @post.title
+    @meta_description = @post.post_snippet
     @canonical_url = posts_path(@post)
     @og_properties = {
       title: @meta_title,
       type:  'website',
       image: @post.featured_image.url(:medium),  # this file should exist in /app/assets/images/logo.png
       url: @canonical_url,
-      description: @post.post_snippet
+      description: @meta_description
     }
     @posts = Post.all.limit(3)
   end
