@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
        <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
        <% SubCategory.all.each do |sub_category| %>
-          <li class="hidden-md hidden-lg"><%= link_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
+          <li class="hidden-md hidden-lg"><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
        <% end %>
        <% if user_signed_in? %>
        <li class="dropdown">
@@ -39,12 +39,40 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
        <% SubCategory.all.each do |sub_category| %>
-          <li class=""><%= link_to sub_category.name, posts_path(sub_category: sub_category.name) %></li>
+          <li class=""><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
        <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
+<div class="container-fluid padding-0">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        
+        <% @posts.sort_by{|t| - t.date_published.to_i}[0..0].each do |post| %> 
+        <div class="item active">
+          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+           <div class="carousel-caption">
+            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <p><%= raw post.content.truncate(200) %></p>
+          </div>
+        </div><!-- End Item -->
+        <% end %>
+        
+        <% @posts.sort_by{|t| - t.date_published.to_i}[1..3].each do |post| %> 
+        <div class="item">
+          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+           <div class="carousel-caption">
+            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <p><%= raw post.content.truncate(200) %></p>
+          </div>
+        </div><!-- End Item -->
+        <% end %>
+      </div><!-- End Carousel Inner -->
+    </div><!-- End Carousel -->
+</div>
 <div class="container">
   <br>
 <%= render 'posts/post' %>
