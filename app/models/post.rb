@@ -3,8 +3,8 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: :slugged
   
   belongs_to :user
-  has_many :categories
-  has_many :sub_categories
+  belongs_to :categories
+  belongs_to :sub_categories
   
   def should_generate_new_friendly_id?
    title_changed?
