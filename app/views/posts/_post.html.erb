@@ -2,7 +2,7 @@
         <div class="col-sm-6 col-md-3">
           <div class="thumbnail padding-0 border-radius-0" style="height:420px;">
             <span class="label label-success" style="position:absolute; z-index:100; padding:5px; left:5%;">
-              <%= post.sub_category.name %>
+              <%= post.sub_category.try(:name) %>
             </span>
             <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
             <div class="caption">
