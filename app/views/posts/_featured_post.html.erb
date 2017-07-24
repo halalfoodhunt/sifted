@@ -1,13 +1,12 @@
 <% @posts.each do |post| %>
 <% if post.featured_2 == true %>
 <div class="col-sm-6 col-md-6 padding-0" style="height:420px;">
-  <div class="col-sm-6 col-md-3 padding-0">
-    <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
+  <div class="col-sm-6 col-md-6 padding-0">
+    <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;"><%= post.sub_category.name %>
     </span>
-    <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
+    <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
   </div>
-  <div class="col-sm-6 col-md-3">
-    <%= post.sub_category.name %>
+  <div class="col-sm-6 col-md-6 padding-0">
     <div class="caption">
       <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
       <p>by <i><%= post.user.name %></i></p>
