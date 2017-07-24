@@ -1,4 +1,4 @@
-<% for post in @post.try(:limit, 4).where(featured_1: true) %>
+<% for post in @post.try(:limit, 4) %>
 <% @posts.each do |post| %>
 <% if post.featured_1 == true %>
         <div class="col-sm-6 col-md-3">
