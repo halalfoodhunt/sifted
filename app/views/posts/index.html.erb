@@ -75,7 +75,7 @@
 </div>
 <div class="container">
   <br>
-  <%= @featured_one %>
+  <%= @posts.where(featured_one: true) %>
     <%= render 'posts/post' %>
 </div>
 </div>

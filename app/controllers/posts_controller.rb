@@ -81,18 +81,6 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  def featured_one
-    @posts = Post.where(featured_1: true).order("date_published DESC")
-  end
-  
-  def featured_two
-    @posts = Post.where(featured_2: true).order("date_published DESC")
-  end
-  
-  def featured_three
-    @posts = Post.where(featured_3: true).order("date_published DESC")
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
