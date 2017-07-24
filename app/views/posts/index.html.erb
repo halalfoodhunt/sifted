@@ -75,7 +75,7 @@
 </div>
 <div class="container">
   <br>
-  <%= @posts.where(sub_category: 'places') %>
+  <%= @posts.where("sub_category_id = 3") %>
     <%= render 'posts/post' %>
 </div>
 </div>
