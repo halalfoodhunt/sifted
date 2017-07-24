@@ -75,7 +75,7 @@
 </div>
 <div class="container">
   <br>
-  <% for post in @post.try(:limit, 4).where(sub_category: 'Homies') %>
+  <%= @posts.where.(sub_category_id: 1)
     <%= render 'posts/post' %>
   <% end %>
 </div>
