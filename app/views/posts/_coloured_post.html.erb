@@ -1,13 +1,15 @@
 <% @posts.each do |post| %>
 <% if post.featured_3 == true %>
         <div class="col-sm-6 col-md-3" style="background:#D5AD56; height:285px;">
-            <span class="label label-warning" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
+            <center>
+            <span class="label label-warning" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
               <%= post.sub_category.name %>
             </span>
             <div class="caption">
-              <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
-              <p><%= post.post_snippet.truncate(200) %></p>
+              <h4><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h4>
+              <p><%= post.post_snippet.truncate(50) %></p>
             </div>
+            </center>
           </div>
         </div>
         <% end %>
