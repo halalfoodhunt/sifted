@@ -75,7 +75,7 @@
 </div>
 <div class="container">
   <br>
-  <% for post in sub_category.posts.try(:limit, 4).where(category: 'Homies') %>
+  <% for post in sub_category.posts.try(:limit, 4).where(sub_category: 'Homies') %>
     <%= render 'posts/post' %>
   <% end %>
 </div>
