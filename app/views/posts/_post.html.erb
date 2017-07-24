@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <% if post.featured_1 == true %>
         <div class="col-sm-6 col-md-3">
-          <div class="thumbnail padding-0 border-radius-0" style="height:300px;">
+          <div class="thumbnail padding-0 border-radius-0" style="height:285px;">
             <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
               <%= post.sub_category.name %>
             </span>
