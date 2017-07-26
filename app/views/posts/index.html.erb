@@ -92,16 +92,6 @@
           </div>
         </div><!-- End Item -->
         <% end %>
-        
-        <% @posts.sort_by{|t| - t.date_published.to_i}[5..7].each do |post| %> 
-        <div class="item">
-          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
-           <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
-            <p><%= raw post.content.truncate(200) %></p>
-          </div>
-        </div><!-- End Item -->
-        <% end %>
       </div><!-- End Carousel Inner -->
     </div><!-- End Carousel -->
 </div>
