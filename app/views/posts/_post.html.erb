@@ -47,7 +47,8 @@
         </div>
         <% end %>
         <% end %>
-        <% @posts.each do |post| %>
+        <div class="container">
+          <% @posts.each do |post| %>
 <% if post.featured_4 == true %>
         <div class="col-sm-6 col-md-3" style="padding-left:0;">
           <div class="thumbnail padding-0 border-radius-0" style="height:285px;">
@@ -63,7 +64,6 @@
         </div>
         <% end %>
         <% end %>
-        <div class="container">
         <% @posts.each do |post| %>
         <% if post.featured_5 == true %>
         <div class="col-sm-6 col-md-3" style="padding-left:0;">
