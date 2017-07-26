@@ -50,7 +50,8 @@
         <div class="container">
         <% @posts.each do |post| %>
         <% if post.featured_5 == true %>
-        <div class="col-sm-6 col-md-3" style="background:#F8E19E; height:285px; padding:10px;">
+        <div class="col-sm-12 col-md-12" style="background:#F8E19E; height:285px;">
+        <div class="col-sm-6 col-md-3">
             <center>
             <span class="label label-warning" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
               <%= post.sub_category.name %>
@@ -61,6 +62,7 @@
             </div>
             </center>
           </div>
+        </div>
         </div>
         <% end %>
         <% end %>
