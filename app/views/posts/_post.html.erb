@@ -50,8 +50,8 @@
         <div class="container">
         <% @posts.each do |post| %>
         <% if post.featured_5 == true %>
-        <div class="col-sm-6 col-md-3" style="background:#F8E19E; height:285px;">
-        <div class="thumbnail padding-0 border-radius-0">
+        <div class="col-sm-6 col-md-3" style="height:285px;">
+        <div class="thumbnail padding-0 border-radius-0" style="background:#F8E19E;">
             <span class="label label-success" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
               <%= post.sub_category.name %>
             </span>
