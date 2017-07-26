@@ -24,6 +24,46 @@
   <div class="form-group">
     <%= f.text_area :post_snippet %>
   </div>
+  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_1 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_2 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_3 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_4 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_5 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_6 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :featured_7 %>
+    </div>
+  </div>
+    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+    <div class="field">
+    <%= f.check_box :recommended %>
+    </div>
+  </div>
   <div class="actions">
     <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-raised btn-primary" %>
   </div>
@@ -44,27 +84,6 @@
     </div>
     <div class="field">
     <%= f.check_box :draft %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_1 %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_2 %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_3 %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_4 %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_5 %>
-    </div>
-     <div class="field">
-    <%= f.check_box :featured_6 %>
-    </div>
-    <div class="field">
-    <%= f.check_box :featured_7 %>
     </div>
       <div class="actions">
     <%= f.submit %>
