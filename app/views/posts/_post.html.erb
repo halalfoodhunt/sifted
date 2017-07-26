@@ -73,7 +73,7 @@
               <%= post.sub_category.name %>
             </span>
             <div class="caption">
-              <h4><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h4>
+              <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
               <p>by <i><%= post.user.name %></i></p>
             </div>
             </center>
