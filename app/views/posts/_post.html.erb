@@ -24,7 +24,7 @@
   </div>
   <div class="col-sm-6 col-md-6" style="border:1px solid #ddd; height:285px;">
     <div class="caption">
-      <h4><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h4>
+      <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
       <p>by <i><%= post.user.name %></i></p>
     </div>
   </div>
