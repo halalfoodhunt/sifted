@@ -55,7 +55,7 @@
         <div class="item active">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
             <p><%= raw post.content.truncate(200) %></p>
           </div>
         </div><!-- End Item -->
@@ -65,7 +65,7 @@
         <div class="item">
           <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
            <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+            <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
             <p><%= raw post.content.truncate(200) %></p>
           </div>
         </div><!-- End Item -->
@@ -97,7 +97,7 @@
 </div>
 <br>
 <div class="container">
-  <center><h4>Cooking</h4></center>
+  <center><h3>Cooking</h3></center>
   <%= render 'posts/recommended_post' %>
 </div>
 </div>
