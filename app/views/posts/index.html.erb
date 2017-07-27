@@ -75,6 +75,7 @@
 </div>
 <div class="container">
   <br>
+  <h3>Latest News</h3>
   <%= render 'posts/post' %>
   </div>
 <div class="container-fluid padding-0">
@@ -94,10 +95,11 @@
         <% end %>
       </div><!-- End Carousel Inner -->
     </div><!-- End Carousel -->
+    <%= link_to "More Articles", post_path(post), :class => "btn btn-lg btn-default" %>
 </div>
 <br>
 <div class="container">
-  <center><h3>Cooking</h3></center>
+  <h3>Cooking</h3>
   <%= render 'posts/recommended_post' %>
 </div>
 </div>
