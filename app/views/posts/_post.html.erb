@@ -18,7 +18,7 @@
 <% if post.featured_2 == true %>
 <div class="col-sm-12 col-md-6" style="height:285px; padding:0 15px 0 0;">
   <div class="col-sm-6 col-md-6 padding-0">
-    <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;"><%= post.sub_category.name %>
+    <span class="label label-warning" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;"><%= post.sub_category.name %>
     </span>
     <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
   </div>
@@ -37,7 +37,7 @@
   <div class="col-sm-6 col-md-3" style="padding-right:0;">
     <div class="thumbnail padding-0 border-radius-0" style="background:#003F2E; height:285px; padding:10px;">
       <center>
-        <span class="label label-success" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
+        <span class="label label-warning" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
           <%= post.sub_category.name %>
         </span>
         <div class="caption">
@@ -55,7 +55,7 @@
   <% if post.featured_4 == true %>
   <div class="col-sm-6 col-md-3" style="padding-left:0;">
     <div class="thumbnail padding-0 border-radius-0" style="height:285px;">
-      <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
+      <span class="label label-warning" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
         <%= post.sub_category.name %>
       </span>
       <%= image_tag post.featured_image.url(:medium), :class => "img-responsive" %>
@@ -72,7 +72,7 @@
   <div class="col-sm-6 col-md-3" style="padding-left:0;">
     <div class="thumbnail padding-0 border-radius-0" style="background:#D5AD56; height:285px; padding:10px;">
       <center>
-        <span class="label label-success" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
+        <span class="label label-danger" style="padding:5px; text-transform:uppercase; letter-spacing: 2px;">
           <%= post.sub_category.name %>
         </span>
         <div class="caption">
