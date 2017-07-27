@@ -30,7 +30,7 @@
         <div class="caption">
           <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
           <h6>by <%= post.user.name %></h6>
-          <%= link_to "Read More", post_path(post), :class => "btn btn-default" %>
+          <%= link_to "Read More", post_path(post), :class => "btn btn-md btn-default" %>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="caption">
           <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none; color:white;' %></h4>
           <h6 style="color: white;">by <%= post.user.name %></h6>
-          <%= link_to "Read More", post_path(post), :class => "btn btn-default" , :style => 'color:white;' %>
+          <%= link_to "Read More", post_path(post), :class => "btn btn-md btn-default" , :style => 'color:white;' %>
         </div>
       </center>
     </div>
@@ -83,7 +83,7 @@
           <div class="caption">
             <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
             <h6>by <%= post.user.name %></h6>
-            <%= link_to "Read More", post_path(post), :class => "btn btn-default" , :style => 'color:white;' %>
+            <%= link_to "Read More", post_path(post), :class => "btn btn-md btn-default" , :style => 'color:white;' %>
           </div>
         </center>
       </div>
