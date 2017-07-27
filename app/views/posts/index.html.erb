@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
        <li><a href="http://www.friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
        <% SubCategory.all.each do |sub_category| %>
-          <li class="hidden-md hidden-lg"><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
+       <li class="hidden-md hidden-lg"><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
        <% end %>
        <% if user_signed_in? %>
        <li class="dropdown">
@@ -39,69 +39,67 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
        <% SubCategory.all.each do |sub_category| %>
-          <li class=""><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
+       <li class=""><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
        <% end %>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
+     </ul>
+   </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
 </nav>
 <div class="container-fluid padding-0">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        
-        <% @posts.sort_by{|t| - t.date_published.to_i}[0..0].each do |post| %> 
-        <div class="item active">
-          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
-           <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
-            <p><%= raw post.content.truncate(200) %></p>
-          </div>
-        </div><!-- End Item -->
-        <% end %>
-        
-        <% @posts.sort_by{|t| - t.date_published.to_i}[1..3].each do |post| %> 
-        <div class="item">
-          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
-           <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
-            <p><%= raw post.content.truncate(200) %></p>
-          </div>
-        </div><!-- End Item -->
-        <% end %>
-      </div><!-- End Carousel Inner -->
-    </div><!-- End Carousel -->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      
+      <% @posts.sort_by{|t| - t.date_published.to_i}[0..0].each do |post| %> 
+      <div class="item active">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
+          <p><%= raw post.content.truncate(200) %></p>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+      
+      <% @posts.sort_by{|t| - t.date_published.to_i}[1..3].each do |post| %> 
+      <div class="item">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
+          <p><%= raw post.content.truncate(200) %></p>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+    </div><!-- End Carousel Inner -->
+  </div><!-- End Carousel -->
 </div>
 <div class="container">
   <h3>Latest Articles</h3>
   <%= render 'posts/post' %>
   <center><%= link_to "More Articles", pages_index_path, :class => "btn btn-default" %></center> <br>
-  </div>
+</div>
 <div class="container-fluid padding-0">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        
-        <% @posts.sort_by{|t| - t.date_published.to_i}[4..4].each do |post| %> 
-        <div class="item active">
-          <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
-           <div class="carousel-caption">
-            <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
-            <p><%= raw post.content.truncate(200) %></p>
-          </div>
-        </div><!-- End Item -->
-        <% end %>
-      </div><!-- End Carousel Inner -->
-    </div><!-- End Carousel -->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      
+      <% @posts.sort_by{|t| - t.date_published.to_i}[4..4].each do |post| %> 
+      <div class="item active">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.title, post_path(post), :style => 'color:white;' %></div>
+          <p><%= raw post.content.truncate(200) %></p>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+    </div><!-- End Carousel Inner -->
+  </div><!-- End Carousel -->
 </div>
 <br>
 <div class="container">
   <h3>Cooking</h3>
   <%= render 'posts/recommended_post' %>
-</div>
-</div>
 </div>
 <div class="container-fluid padding-0" style="background:#22211d;">
   <div class="container">
@@ -112,46 +110,54 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <br><br><br>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-    <ul class="nav nav-pills nav-stacked">
-  <% Category.all.each do |category| %>
+        <ul class="nav nav-pills nav-stacked">
+          <% Category.all.each do |category| %>
           <li><h5><%= link_to category.name, pages_index_path(category: category.name), :style => 'color:#D5AD56;' %></h5></li>
-       <% end %>
-</ul>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    <ul class="nav nav-pills nav-stacked">
-  <li role="presentation"><p><a href="#" style="color:#eee;">About</a></p></li>
-  <li role="presentation"><p><a href="#" style="color:#eee;">Contact</a></p></li>
-  <li role="presentation"><p><a href="#" style="color:#eee;">Terms of Service</a></p></li>
-  <li role="presentation"><p><a href="#" style="color:#eee;">Privacy Policy</a></p></li>
-</ul>
-</div>
-</div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><p><a href="#" style="color:#eee;">About</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Contact</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Terms of Service</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Privacy Policy</a></p></li>
+        </ul>
+      </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><p><a href="http://www.facebook.com/halalfoodhunt" style="color:#eee;"><i class="fa fa-facebook" aria-hidden="true"></i> FACEBOOK</a></p></li>
+          <li role="presentation"><p><a href="http://www.instagram.com/halalfoodhunt" style="color:#eee;"><i class="fa fa-facebook" aria-hidden="true"></i> INSTAGRAM</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;"><i class="fa fa-globe" aria-hidden="true"></i> WEBSITE</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Privacy Policy</a></p></li>
+        </ul>
+    </div>
   </div>
 </div>
 <script>
-  $(document).ready( function() {
-    $('#myCarousel').carousel({
-		interval:   4000
-	});
-	
-	var clickEvent = false;
-	$('#myCarousel').on('click', '.nav a', function() {
-			clickEvent = true;
-			$('.nav li').removeClass('active');
-			$(this).parent().addClass('active');		
-	}).on('slid.bs.carousel', function(e) {
-		if(!clickEvent) {
-			var count = $('.nav').children().length -1;
-			var current = $('.nav li.active');
-			current.removeClass('active').next().addClass('active');
-			var id = parseInt(current.data('slide-to'));
-			if(count == id) {
-				$('.nav li').first().addClass('active');	
-			}
-		}
-		clickEvent = false;
-	});
+$(document).ready( function() {
+  $('#myCarousel').carousel({
+    interval:   4000
+  });
+  
+  var clickEvent = false;
+  $('#myCarousel').on('click', '.nav a', function() {
+    clickEvent = true;
+    $('.nav li').removeClass('active');
+    $(this).parent().addClass('active');    
+  }).on('slid.bs.carousel', function(e) {
+    if(!clickEvent) {
+      var count = $('.nav').children().length -1;
+      var current = $('.nav li.active');
+      current.removeClass('active').next().addClass('active');
+      var id = parseInt(current.data('slide-to'));
+      if(count == id) {
+        $('.nav li').first().addClass('active');  
+      }
+    }
+    clickEvent = false;
+  });
 });
 </script>
 
