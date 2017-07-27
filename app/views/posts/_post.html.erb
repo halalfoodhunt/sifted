@@ -8,7 +8,7 @@
     <%= image_tag post.featured_image.url(:medium), :class => "img-responsive" %>
     <div class="caption">
       <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
-      <p>by <i><%= post.user.name %></i></p>
+      <h6>by <i><%= post.user.name %></i></h6>
     </div>
   </div>
 </div>
