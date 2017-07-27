@@ -113,7 +113,7 @@
       <br><br><br>
     <ul class="nav nav-pills nav-stacked">
   <% Category.all.each do |category| %>
-          <li><h5><%= link_to category.name, pages_index_path(category: category.name) %></h5></li>
+          <li><h5 style="color:#fff;"><%= link_to category.name, pages_index_path(category: category.name) %></h5></li>
        <% end %>
 </ul>
 </div>
