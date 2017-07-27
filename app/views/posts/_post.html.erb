@@ -17,7 +17,7 @@
 <% @posts.each do |post| %>
 <% if post.featured_2 == true %>
 <div class="col-sm-12 col-md-6 padding-0">
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-6" style="padding-right:0;">
     <span class="label label-warning" style="position:absolute; z-index:100; padding:5px; margin-top:10px; margin-left:10px; text-transform:uppercase; letter-spacing: 2px;">
           <%= post.sub_category.name %>
         </span>
@@ -25,7 +25,7 @@
       <%= image_tag post.featured_image.url(:square), :class => "img-responsive" %>
       </div>
     </div>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6" style="padding-left:0;">
       <div class="thumbnail padding-0 border-radius-0" style="height:285px;">
         <div class="caption">
           <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
