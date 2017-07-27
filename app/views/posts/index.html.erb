@@ -78,6 +78,7 @@
   <h3>Latest News</h3>
   <%= render 'posts/post' %>
   </div>
+      <%= link_to "More Articles", pages_index_path, :class => "btn btn-lg btn-default" %>
 <div class="container-fluid padding-0">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
@@ -95,7 +96,6 @@
         <% end %>
       </div><!-- End Carousel Inner -->
     </div><!-- End Carousel -->
-    <%= link_to "More Articles", pages_index_path, :class => "btn btn-lg btn-default" %>
 </div>
 <br>
 <div class="container">
