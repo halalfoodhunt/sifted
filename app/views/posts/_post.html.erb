@@ -41,8 +41,8 @@
           <%= post.sub_category.name %>
         </span>
         <div class="caption">
-          <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h4>
-          <p>by <i><%= post.user.name %></i></p>
+          <h4><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none; color:white;' %></h4>
+          <p style="color: white;">by <i><%= post.user.name %></i></p>
           <%= link_to "Read More", post_path(post), :class => "btn btn-default" %>
         </div>
       </center>
