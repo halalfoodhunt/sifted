@@ -91,9 +91,28 @@ label {
     font-size: 12px;
 }
 
+.label-success {
+    background-color: #003F2E;
+}
+
+.label-danger {
+    background-color: #FF3313;
+}
+
+.label-warning {
+    background-color: #D5AD56;
+}
+
 .lead {
     font-family: 'Montserrat', sans-serif;
     font-weight:500;
+}
+
+.btn-default {
+    background-color: transparent;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .navbar-brand {
