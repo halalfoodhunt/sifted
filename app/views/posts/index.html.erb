@@ -111,9 +111,7 @@
       <br><br><br>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <ul class="nav nav-pills nav-stacked">
-          <% Category.all.each do |category| %>
-          <li><h5><%= link_to category.name, pages_index_path(category: category.name), :style => 'color:#D5AD56;' %></h5></li>
-          <% end %>
+          
         </ul>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
