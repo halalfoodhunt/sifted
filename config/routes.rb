@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get 'pages/feedback_form', as: 'feedback_form'
   get 'pages/index'
-  get 'pages/admin_dashboard', as: 'admin_dashboard'
+  get 'pages/admin_dashboard', as: 'control_panel'
   get '/:id', to: 'posts#show'
   resources :categories
   resources :media
