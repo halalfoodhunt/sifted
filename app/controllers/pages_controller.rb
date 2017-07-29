@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_filter :is_admin?, only: [:admin_dashboard]
   
   def index
 		if params[:sub_category].blank?
