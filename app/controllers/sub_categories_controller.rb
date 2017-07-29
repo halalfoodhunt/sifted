@@ -1,4 +1,5 @@
 class SubCategoriesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_sub_category, only: [:show, :edit, :update, :destroy]
 
@@ -59,6 +60,12 @@ class SubCategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to sub_categories_url, notice: 'Sub category was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def is_admin?
+    unless current_user && current_user.admin?
+     render "layouts/unauthorised"
     end
   end
 

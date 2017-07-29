@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
@@ -59,6 +60,12 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def is_admin?
+    unless current_user && current_user.admin?
+     render "layouts/unauthorised"
     end
   end
 

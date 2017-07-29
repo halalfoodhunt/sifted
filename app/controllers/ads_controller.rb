@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
