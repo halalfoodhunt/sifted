@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
   # GET /ads
@@ -58,6 +59,12 @@ class AdsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to ads_url, notice: 'Ad was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def is_admin?
+    unless current_merchant && current_merchant.admin?
+     render "layouts/unauthorised"
     end
   end
 
