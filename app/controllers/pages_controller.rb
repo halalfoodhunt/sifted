@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   
   def index
 		if params[:sub_category].blank?
-			@posts = Post.all.order("date_published DESC")
+			@posts = Post.where(draft: false).order("date_published DESC")
 		else
 			@sub_category_id = SubCategory.find_by(name: params[:sub_category]).id
 			@posts = Post.where(sub_category_id: @sub_category_id).order("date_published DESC")
@@ -12,5 +12,9 @@ class PagesController < ApplicationController
   end
 
   def feedback_form
+  end
+  
+  def admin_dashboard
+      @posts = Post.all.order("date_published DESC")
   end
 end
