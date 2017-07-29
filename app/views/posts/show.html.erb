@@ -73,6 +73,7 @@
       <br>
     </div>
     <div class="col-xs-12 col-md-3">
+      <img src="http://s3.amazonaws.com/international-hfh/ads/images/000/000/001/square/336x280.jpg?1501345182" alt="..." class="img-thumbnail">
     <% @ads.each do |ad| %>
       <%= image_tag ad.image.url(:square), :class => "img-responsive", :style =>"width:100%; important! display:block;" %>
     <% end %>
