@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ads
   resources :advertisements
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
