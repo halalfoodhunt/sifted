@@ -63,7 +63,7 @@ class AdsController < ApplicationController
   end
   
   def is_admin?
-    unless current_merchant && current_merchant.admin?
+    unless current_user && current_user.admin?
      render "layouts/unauthorised"
     end
   end
