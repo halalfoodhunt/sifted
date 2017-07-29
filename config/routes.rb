@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :advertisements
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
   get 'pages/feedback_form', as: 'feedback_form'
