@@ -4,7 +4,7 @@ class CreateAds < ActiveRecord::Migration
       t.string :name
       t.datetime :commencement_date
       t.datetime :expiry_date
-      t.boolean :publish
+      t.boolean :publish, default: false
 
       t.timestamps null: false
     end
