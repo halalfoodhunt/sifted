@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :is_admin?, only: [:admin_dashboard]
   
   def index
 		if params[:sub_category].blank?
@@ -16,5 +17,11 @@ class PagesController < ApplicationController
   
   def admin_dashboard
       @posts = Post.all.order("date_published DESC")
+  end
+  
+  def is_admin?
+    unless current_user && current_user.admin?
+     render "layouts/unauthorised"
+    end
   end
 end
