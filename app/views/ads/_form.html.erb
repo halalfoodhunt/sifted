@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= image_tag(@ad.image.url(:square), :class => "img-responsive") %><br>
+    <%= f.file_field :image, hide_label: true %>
+  </div>
   <div class="field">
     <%= f.text_field :name %>
   </div>
