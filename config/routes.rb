@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
-  get 'pages/feedback_form', as: 'feedback_form'
-  get 'pages/index'
-  get "/control_panel" => "pages#admin_dashboard"
-  get '/:id', to: 'posts#show'
   resources :categories
   resources :media
   resources :posts
   resources :sub_categories
   resources :ads
+  get 'pages/feedback_form', as: 'feedback_form'
+  get 'pages/index'
+  get "/control_panel" => "pages#admin_dashboard"
+  get '/:id', to: 'posts#show'
   devise_for :users, controllers: { registrations: "users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
