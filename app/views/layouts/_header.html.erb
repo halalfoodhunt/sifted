@@ -19,7 +19,7 @@
        <li class="hidden-md hidden-lg"><%= link_to sub_category.name, pages_index_path(sub_category: sub_category.name) %></li>
        <% end %>
        <% if current_user.try(:admin?) %>
-       <li><h6><%= link_to 'Admin Dashboard', pages_admin_dashboard_path %></h6></li>
+       <li><h6><%= link_to 'Admin Dashboard', control_panel_path %></h6></li>
        <li><h6><center><%= link_to 'Add New Post', new_post_path %></center></h6></li>
        <li><h6><center><%= link_to "Logout", destroy_user_session_path, method: :delete  %></center></h6></li>
        <% elsif user_signed_in? %>
