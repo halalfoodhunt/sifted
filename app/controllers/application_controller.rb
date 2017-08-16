@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_path, :alert => exception.message
   end
   
-  BRAND_NAME = 'SIFTED - Behind the Halal Food Scene'.freeze
+  BRAND_NAME = 'SIFTED-By Halalfoodhunt'.freeze
 
   def meta_title(title)
     [title, BRAND_NAME].reject(&:empty?).join(' | ')
