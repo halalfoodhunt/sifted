@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       type:  'website',
       image: @post.featured_image.url(:medium),  # this file should exist in /app/assets/images/logo.png
       url: @canonical_url,
-      description: @post.post_snippet
+      description: @meta_description
     }
     @posts = Post.all.limit(3)
   end
