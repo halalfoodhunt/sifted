@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @ads = Ad.all
-    @meta_title = meta_title @post.url_slug
+    @meta_title = @post.url_slug
     @meta_description = @post.post_snippet
     @canonical_url = posts_path(@post)
     @og_properties = {
