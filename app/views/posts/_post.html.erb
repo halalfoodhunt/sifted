@@ -99,7 +99,7 @@
         </span>
         <%= image_tag post.featured_image.url(:medium), :class => "img-responsive" %>
         <div class="caption">
-          <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
+          <h5><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h5>
           <h6>by <%= post.user.name %></h6>
         </div>
       </div>
@@ -117,7 +117,7 @@
         </span>
         <%= image_tag post.featured_image.url(:medium), :class => "img-responsive" %>
         <div class="caption">
-          <h5><%= link_to post.title, post_path(post), :style => 'text-transform:none;' %></h5>
+          <h5><%= link_to post.url_slug, post_path(post), :style => 'text-transform:none;' %></h5>
           <h6>by <%= post.user.name %></h6>
         </div>
       </div>
