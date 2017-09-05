@@ -11,20 +11,19 @@
         <h1><%= @post.url_slug %></h1>
           <div class="byline"><i>by</i> <%= @post.user.name %> <%= @post.date_published.strftime("%b %d, %Y") %></div>
           <div class="col-sm-12 col-md-12">
-        <h4>Share</h4>
         <%= social_share_button_tag("My Home Page")%>
       </div>
           <br><center><%= image_tag @post.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
         </center>
         <p><%= @post.content.html_safe %></p><br>
-        <div class="well well-lg">Large Well
+        <div class="well well-lg">
         <h4>WANT TO SEE MORE OF SUCH ARTICLES? SUPPORT US!</h4>
-        <p>halalfoodhunt.com is a website listing verified Muslim-owned or Halal Certified food businesses. We started out educating halal foodies on how to know if a food is halal or not when there are no halal certifications. As we received so many enquiries on whether a food business is halal or not, we created halalfoodhunt.com, while letting halal foodies know about the myriad of options open to them! It is a website created and self-funded by local Singaporean Muslims for the Singaporean Muslim community.
+        <p>halalfoodhunt.com is a website listing verified Muslim-owned or Halal Certified food businesses. We started out educating halal foodies on how to know if a food is halal or not when there are no halal certifications. As we received so many enquiries on whether a food business is halal or not, we created halalfoodhunt.com, while letting halal foodies know about the myriad of options open to them! It is a website created and self-funded by local Singaporean Muslims for the Singaporean Muslim community.</p>
         <center>
           <img class="img-responsive" src="/images/media/map_friends.png" alt="Friends Card">
         </center>
-        If you like what we do, get yourself a FRIENDS Card! The FRIENDS Card allows you to get exclusive deals, invites and savings of between 10-20% at over 60 halal food businesses in Singapore, for only $18/year, including halal restaurants, cafes, bakeries including online e-commerce businesses in Singapore. We want to encourage foodies to explore eating at new halal places. So if you like what we do and want to support us, get a FRIENDS Card for yourself!
-        <a href="http://friends.halalfoodhunt.com" class="btn btn-lg btn-danger" role="button">Learn More</a>
+        <p>If you like what we do, get yourself a FRIENDS Card! The FRIENDS Card allows you to get exclusive deals, invites and savings of between 10-20% at over 60 halal food businesses in Singapore, for only $18/year, including halal restaurants, cafes, bakeries including online e-commerce businesses in Singapore. We want to encourage foodies to explore eating at new halal places. So if you like what we do and want to support us, get a FRIENDS Card for yourself!
+        <center><a href="http://friends.halalfoodhunt.com" class="btn btn-md btn-success" role="button">Learn More</a></center>
         </p>
         </div>
       </div>
