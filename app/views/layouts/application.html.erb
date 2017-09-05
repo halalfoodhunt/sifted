@@ -16,6 +16,7 @@
   <%= meta_og_tags @og_properties %>
   <meta property="og:image:type" content="image/jpeg">
   <% end %>
+  <%= auto_discovery_link_tag :rss, posts_url(:format => :rss) %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script>
