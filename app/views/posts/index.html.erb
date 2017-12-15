@@ -15,7 +15,7 @@
       </div><!-- End Item -->
       <% end %>
       
-      <% @posts[6..8].each do |post| %> 
+      <% @posts[10..14].each do |post| %> 
       <div class="item">
         <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
         <div class="carousel-caption">
@@ -38,7 +38,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       
-      <% @posts.sort_by{|t| - t.date_published.to_i}[1..1].each do |post| %> 
+      <% @posts.sort_by{|t| - t.date_published.to_i}[12..12].each do |post| %> 
       <div class="item active">
         <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
         <div class="carousel-caption">
