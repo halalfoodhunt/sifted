@@ -5,7 +5,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       
-      <% @posts[5..5].each do |post| %> 
+      <% @posts[6..7].each do |post| %> 
       <div class="item active">
         <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
         <div class="carousel-caption">
@@ -15,7 +15,7 @@
       </div><!-- End Item -->
       <% end %>
       
-      <% @posts[6..8].each do |post| %> 
+      <% @posts[8..9].each do |post| %> 
       <div class="item">
         <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
         <div class="carousel-caption">
