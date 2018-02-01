@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   def feedback_form
   end
   
+  def home
+  end
+  
   def admin_dashboard
       @posts = Post.all.order("date_published DESC")
   end

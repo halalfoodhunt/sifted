@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
-  root to: "posts#index"
+  root to: "pagess#home"
   resources :categories
   resources :media
   resources :posts

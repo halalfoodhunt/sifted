@@ -1,0 +1,136 @@
+<%= render 'layouts/header' %>
+<div class="container-fluid padding-0">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      
+      <% @posts[1..1].each do |post| %> 
+      <div class="item active">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+      
+      <% @posts[2..5].each do |post| %> 
+      <div class="item">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+    </div><!-- End Carousel Inner -->
+  </div><!-- End Carousel -->
+</div>
+<div class="container">
+  <h3>Latest Articles</h3>
+  <%= render 'posts/post' %>
+  <center><%= link_to "More Articles", pages_index_path, :class => "btn btn-default" %></center> <br>
+</div>
+<div class="container-fluid padding-0">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      
+      <% @posts.sort_by{|t| - t.date_published.to_i}[13..13].each do |post| %> 
+      <div class="item active">
+        <%= image_tag post.featured_image.url(:large), :class => "img-responsive" %>
+        <div class="carousel-caption">
+          <div class="carousel-h1-caption"><%= link_to post.url_slug, post_path(post), :style => 'color:white;' %></div>
+          <p><%= raw post.content.truncate(200) %></p>
+        </div>
+      </div><!-- End Item -->
+      <% end %>
+    </div><!-- End Carousel Inner -->
+  </div><!-- End Carousel -->
+</div>
+<br>
+<div class="container">
+  <h3>Cooking</h3>
+<%= render 'posts/featured' %>
+</div>
+<div class="container-fluid padding-0" style="background:#22211d;">
+  <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <h2 style="color:#D5AD56;">Sifted</h2>
+      <p style="color:#fff;">Sifted is an online magazine to help halal foodies sift through the multiple food choice available out there, and to bring them more information behind the scenes of the halal food scene.</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <br><br><br>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <ul class="nav nav-pills nav-stacked">
+          
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><p><a href="#" style="color:#eee;">About</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Contact</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Terms of Service</a></p></li>
+          <li role="presentation"><p><a href="#" style="color:#eee;">Privacy Policy</a></p></li>
+        </ul>
+      </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+       <br><br><br>
+      <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><p><a href="http://www.facebook.com/halalfoodhunt" style="color:#eee;"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></p></li>
+          <li role="presentation"><p><a href="http://www.instagram.com/halalfoodhunt" style="color:#eee;"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></p></li>
+          <li role="presentation"><p><a href="http://www.halalfoodhunt.com" style="color:#eee;"><i class="fa fa-globe" aria-hidden="true"></i> Website</a></p></li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:transparent; clear:left; font:14px Lato,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//halalfoodhunt.us8.list-manage.com/subscribe/post?u=11d98f2a39097bb4940866f74&amp;id=31d80bdad2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+      <br><br><br>
+	<label for="mce-EMAIL" style="color:#D5AD56;">Subscribe to our mailing list</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_11d98f2a39097bb4940866f74_31d80bdad2" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready( function() {
+  $('#myCarousel').carousel({
+    interval:   4000
+  });
+  
+  var clickEvent = false;
+  $('#myCarousel').on('click', '.nav a', function() {
+    clickEvent = true;
+    $('.nav li').removeClass('active');
+    $(this).parent().addClass('active');    
+  }).on('slid.bs.carousel', function(e) {
+    if(!clickEvent) {
+      var count = $('.nav').children().length -1;
+      var current = $('.nav li.active');
+      current.removeClass('active').next().addClass('active');
+      var id = parseInt(current.data('slide-to'));
+      if(count == id) {
+        $('.nav li').first().addClass('active');  
+      }
+    }
+    clickEvent = false;
+  });
+});
+</script>
+
